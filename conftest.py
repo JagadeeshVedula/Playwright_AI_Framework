@@ -1,6 +1,7 @@
 import pytest
 from playwright.sync_api import sync_playwright
 import os
+import shutil
 
 
 @pytest.fixture
@@ -13,7 +14,11 @@ def browser():
 @pytest.fixture
 def page(browser,request):
     test_name=request.node.name
-    context=browser.new_context(no_viewport=False,record_video_dir=f"AutomationResults/{test_name}/")
+    path = f"AutomationResults/{test_name}"
+    if os.path.exists(path):
+        shutil.rmtree(path)
+    os.makedirs(path, exist_ok=True)
+    context=browser.new_context(no_viewport=False,record_video_dir=f"{path}/")
     context.tracing.start(screenshots=True, snapshots=True, sources=True)
     page=context.new_page()
     # page = browser.new_page()
