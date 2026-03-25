@@ -14,7 +14,7 @@ def browser():
     # Start a Playwright session and assign it to variable 'p'
     with sync_playwright() as p:
         # Launch a Chromium browser in visible mode (headless=False means you can see it)
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         # Provide the browser instance to the test, and pause here until the test finishes
         yield browser
         # After the test finishes, close the browser to free up resources
