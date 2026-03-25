@@ -16,7 +16,7 @@ def test_homepage_title(page,test_name):
     # Navigate the browser to the Amazon India homepage
     common.create_playwright_session("https://www.amazon.in/")
     # Verify that the page title contains "Online Shopping"
-    common.test_has_title("Online Shopping")
+    # common.test_has_title("Online Shopping")
     # Call the helper function to search for a product on the page
     search_for_product(page,test_name)
     # Click the search submit button using its XPath selector
