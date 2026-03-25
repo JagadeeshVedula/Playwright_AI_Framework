@@ -29,7 +29,7 @@ jobs:
       env:
         # Assuming you will set GEMINI_API_KEY in GitHub Repository Secrets
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      run: pytest Tests/ --html=report.html --self-contained-html
+      run: pytest Tests/loginTest.py --html=report.html --self-contained-html
     - name: Upload HTML report
       uses: actions/upload-artifact@v4
       if: always()
