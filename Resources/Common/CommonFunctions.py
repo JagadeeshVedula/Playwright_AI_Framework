@@ -121,7 +121,7 @@ class CommonFunctions:
         # Try to find the input field by placeholder and type into it
         try:
             # Find the element by its placeholder text and fill it with the given text
-            self.page.get_by_placeholder(selector).fill(ext)
+            self.page.locator(selector).fill(ext)
             # Print a confirmation that the text was entered successfully
             print(f"Text {ext} Entered in {selector}")
         # If the placeholder-based selector fails, try AI recovery
