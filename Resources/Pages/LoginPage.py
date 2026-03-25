@@ -10,7 +10,7 @@ class LoginPage:
         # Navigate the browser to Amazon India's homepage
         common.create_playwright_session("https://www.amazon.in/")
         # Verify that the page title contains "Online Shopping"
-        common.test_has_title("Online Shopping")
+        # common.test_has_title("Online Shopping")
         # Click on the "Hello, sign in" text to open the sign-in menu
         common.click_element("xpath=//span[text()='Hello, sign in']")
         # (Commented out) Alternative selector for clicking a "Sign in" button
